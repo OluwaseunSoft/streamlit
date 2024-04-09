@@ -76,3 +76,12 @@ if uploaded_file:
         import pandas as pd
         df = pd.read_excel(uploaded_file)
         st.write(df)
+
+st.divider()
+
+# CAMERA INPUT
+camera_photo = st.camera_input('Take a photo')
+if camera_photo:
+    st.image(camera_photo)
+
+st.image('')
