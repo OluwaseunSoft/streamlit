@@ -41,4 +41,12 @@ pet = st.radio('Favorite pet', pets, index=2, key='your_pet')
 st.write(f'Your favorite pet: {pet}')
 st.write(f'Your favorite pet: {st.session_state.your_pet * 3}')
 
+st.divider()
+
+# SELECTBOXES
+cities = ['London', 'Berlin', 'Paris', 'Madrid']
+city = st.selectbox('Your city', cities, index=1)
+st.write(f'You live in {city}')
+
+st.divider()
 
