@@ -1,11 +1,27 @@
 import json
+import requests
 
 #Working with JSON
+response = requests.get('https://jsonplaceholder.typicode.com/todos')
 
-friends = {'Dan':[20, 'London', 3234342], 'Maria': [25, 'Madrid', 45544212]}
+todos = json.loads(response.text)
 
-with open('friends.json', 'w') as f:
-    json.dump(friends, f)
+for task in todos:
+    if task['completed'] == True:
+        print(task)
+# print(type(todos))
+# print(todos)
+
+
+# friends = {'Dan':[20, 'London', 3234342], 'Maria': [25, 'Madrid', 45544212]}
+
+# with open('friends.json', 'rt') as f:
+#     obj = json.load(f)
+#     print(type(obj))
+#     print(obj)
+
+# json_string = json.dumps(friends, indent=4)
+# print(json_string)
 
 # While and Continue
 
