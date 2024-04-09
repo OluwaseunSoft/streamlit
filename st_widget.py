@@ -44,9 +44,35 @@ st.write(f'Your favorite pet: {st.session_state.your_pet * 3}')
 st.divider()
 
 # SELECTBOXES
+'Select Box'
 cities = ['London', 'Berlin', 'Paris', 'Madrid']
 city = st.selectbox('Your city', cities, index=1)
 st.write(f'You live in {city}')
 
 st.divider()
 
+# SLIDER
+'Slider'
+x = st.slider('x', value=15, min_value=5, max_value=100, step=5)
+st.write(f'x is {x}')
+
+st.divider()
+
+# FILE UPLOADER
+'Upload File'
+uploaded_file = st.file_uploader('Upload a file:', type=['txt', 'csv', 'xlsx'])
+if uploaded_file:
+    st.write(uploaded_file)
+    if uploaded_file.type == 'text/plain':
+        from io import StringIO
+        stringio = StringIO(uploaded_file.getvalue().decode('utf-8'))
+        string_data = stringio.read()
+        st.write(string_data)
+    elif uploaded_file.type == 'text/csv':
+        import pandas as pd
+        df = pd.read_csv(uploaded_file)
+        st.write(df)
+    else:
+        import pandas as pd
+        df = pd.read_excel(uploaded_file)
+        st.write(df)
