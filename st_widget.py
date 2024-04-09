@@ -28,3 +28,17 @@ if agree:
 checked = st.checkbox('Continue', value=True)
 if checked:
     ':+1:' * 3
+
+
+df = pd.DataFrame({'Name': ['Anne', 'Maria', 'Douglas'],
+                   'Age': [30, 25, 40]})
+if st.checkbox('Show data'):
+    st.write(df)
+
+#RadioButton
+pets = ['cat', 'dog', 'fish', 'turtle']
+pet = st.radio('Favorite pet', pets, index=2, key='your_pet')
+st.write(f'Your favorite pet: {pet}')
+st.write(f'Your favorite pet: {st.session_state.your_pet * 3}')
+
+
