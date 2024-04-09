@@ -13,3 +13,18 @@ st.write(f'The current number is {x}')
 st.divider()
 
 #Button
+is_clicked = st.button('Guess What???')
+if is_clicked:
+    st.write(':ghost:' * 10)
+
+
+st.divider()
+
+#Checkbox
+agree = st.checkbox('TsCs')
+if agree:
+    'Welcome'
+
+checked = st.checkbox('Continue', value=True)
+if checked:
+    ':+1:' * 3
