@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-
+st.title('Hello Streamlit :100:')
 #st.write()
 
 st.write('Well done Seun')
@@ -17,3 +17,10 @@ st.write(d1)
 #magic
 
 'Displaying using magic :smile:'
+
+df = pd.DataFrame({
+    'first_column': [1, 2, 3, 4],
+    'second_column':[10, 20, 30, 40]
+})
+
+df #
